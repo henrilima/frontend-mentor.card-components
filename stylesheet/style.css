@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Big+Shoulders+Display:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Lexend+Deca:100,200,300,regular,500,600,700,800,900);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+body {
+    height: 100vh;
+    font-size: 15px;
+    background-color: #f2f2f2;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(1fr, 3);
+}
+
+.container div {
+    width: 260px;
+    height: 400px;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container div:nth-child(1) {
+    grid-column: 1;
+    border-radius: 5px 0 0 5px;
+    background-color: hsl(31, 77%, 52%);
+}
+.container div:nth-child(2) {
+    grid-column: 2;
+    background-color:  hsl(184, 100%, 22%);
+}
+.container div:nth-child(3) {
+    grid-column: 3;
+    border-radius: 0 5px 5px 0;
+    background-color: hsl(179, 100%, 13%);
+}
+
+.container div :is(img, h1, p) {
+    color: #fff;
+    padding: 0 25px;
+}
+
+.container div button {
+    margin-top: 40px;
+    margin-left: 25px;
+    padding: 8px 20px;
+    border-radius: 50px;
+
+    border: none;
+    transition: all .4s;
+    background-color: #fff;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.container div:nth-child(1) button { color:hsl(31, 77%, 52%); }
+.container div:nth-child(2) button { color: hsl(184, 100%, 22%); }
+.container div:nth-child(3) button { color:hsl(179, 100%, 13%); }
+
+.container div button:hover {
+    cursor: pointer;
+    background-color: #e3e3e3;
+}
+
+.container div h1 {
+    margin:  20px 0;
+    font-weight: 700;
+
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: "Big Shoulders Display", sans-serif;
+}
+
+.container div p {
+    font-weight: 300;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+@media (max-width: 800px) {
+    body {
+        height: auto;
+        padding: 50px 0;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .container div:nth-of-type(-n+3) {
+        grid-column: 1;
+        border-radius: 5px;
+    }
+
+    .container div:nth-child(1) {
+        border-radius: 5px 5px 0 0;
+    }
+    .container div:nth-child(2) {
+        border-radius: 0;
+    }
+    .container div:nth-child(3) {
+        border-radius: 0 0 5px 5px;
+    }
+}
